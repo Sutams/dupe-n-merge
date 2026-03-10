@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://lmp815ossv8y"]
+
+[ext_resource type="Script" uid="uid://dbhn3xplpss8l" path="res://early-dev/scene-early.gd" id="1_i7jeo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3253y"]
+size = Vector2(1248, 76)
+
+[node name="Scene" type="Node2D" unique_id=1980774555]
+script = ExtResource("1_i7jeo")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=102907786]
+position = Vector2(530, 605)
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1557668901]
+shape = SubResource("RectangleShape2D_3253y")
