@@ -1,31 +1,39 @@
 [gd_scene format=3 uid="uid://7iay3vvusk7j"]
 
 [ext_resource type="Script" uid="uid://70guyocagpfy" path="res://player/player.gd" id="1_rkbax"]
-[ext_resource type="Texture2D" uid="uid://cacjj0h4c1vsl" path="res://aseprite/blob-early.png" id="2_rkbax"]
+[ext_resource type="Texture2D" uid="uid://d453cfedtsbr" path="res://aseprite/blob-3.svg" id="2_rkbax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkbax"]
-size = Vector2(12, 14)
+size = Vector2(14, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yw30f"]
+size = Vector2(30, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1dw6"]
-size = Vector2(12, 3.5)
+size = Vector2(46, 47)
 
-[node name="Player" type="CharacterBody2D" unique_id=1826570732]
+[node name="Player" type="CharacterBody2D" unique_id=1826570732 node_paths=PackedStringArray("sprite", "coll_small", "coll_medium", "coll_big") groups=["Player"]]
 script = ExtResource("1_rkbax")
+sprite = NodePath("Sprite2D")
+coll_small = NodePath("Collsmall")
+coll_medium = NodePath("Collmedium")
+coll_big = NodePath("Collbig")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=501696578]
+position = Vector2(0, -16)
 texture = ExtResource("2_rkbax")
 
-[node name="PlayerBody" type="CollisionShape2D" parent="." unique_id=1663260705]
-position = Vector2(0, 1)
+[node name="Collsmall" type="CollisionShape2D" parent="." unique_id=1663260705]
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_rkbax")
-debug_color = Color(0.34658647, 0.6204947, 0, 0.41960785)
+debug_color = Color(0, 0.5945859, 0.7253158, 0.41960785)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=316145793]
+[node name="Collmedium" type="CollisionShape2D" parent="." unique_id=683421916]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_yw30f")
+debug_color = Color(0, 0.64874125, 0.1809394, 0.41960785)
 
-[node name="Landing" type="CollisionShape2D" parent="Area2D" unique_id=1525319044]
-position = Vector2(0, 7.25)
+[node name="Collbig" type="CollisionShape2D" parent="." unique_id=1785669076]
+position = Vector2(0, -15.5)
 shape = SubResource("RectangleShape2D_g1dw6")
-debug_color = Color(0.9875727, 0, 0.31657475, 0.41960785)
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+debug_color = Color(1, 0.012774696, 0.04643721, 0.41960785)

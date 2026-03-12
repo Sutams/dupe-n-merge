@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://4tyk8c025cg8"]
+
+[ext_resource type="Texture2D" uid="uid://bovo32lv1k6ov" path="res://icon.svg" id="1_7p7yx"]
+[ext_resource type="Script" uid="uid://ccxsvlv36mib4" path="res://item/grow/grow.gd" id="1_rehib"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rehib"]
+size = Vector2(18, 18)
+
+[node name="Grow" type="Area2D" unique_id=1916494720]
+script = ExtResource("1_rehib")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1808834855]
+scale = Vector2(0.140625, 0.140625)
+texture = ExtResource("1_7p7yx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=302580129]
+shape = SubResource("RectangleShape2D_rehib")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
