@@ -6,6 +6,10 @@ var sprites = [
 "res://aseprite/blob-3.svg"
 ]
 
+# not using atp!!
+var active : int = 0
+
+
 # Handle duping
 
 # Handle merging

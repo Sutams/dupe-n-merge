@@ -394,6 +394,7 @@ sources/1 = SubResource("TileSetAtlasSource_omx5w")
 
 [node name="Level1" type="Node2D" unique_id=1427387462 node_paths=PackedStringArray("player")]
 script = ExtResource("1_moo38")
+player_scene = ExtResource("2_lx8gb")
 player = NodePath("Player")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1400953618]
